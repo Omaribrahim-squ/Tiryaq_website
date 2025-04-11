@@ -1,0 +1,110 @@
+
+/* style.css */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f9;
+    color: #333;
+}
+
+header {
+    background-color: #0097a7;
+    color: white;
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ffd600;
+}
+
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+h1, h2, h3 {
+    color: #00796b;
+}
+
+form input,
+form textarea,
+form button {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+form button {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem;
+}
+
+form button:hover {
+    background-color: #004d40;
+}
+
+
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+}
+
+.products-table th, .products-table td {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.products-table th {
+    background-color: #e0f7fa;
+    color: #00796b;
+}
+
+.products-table img {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+}
+
+
+main img {
+    max-width: 300px;
+    width: 100%;
+    height: auto;
+    margin: 1rem 0;
+    display: block;
+    border-radius: 8px;
+}
