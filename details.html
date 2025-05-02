@@ -4,120 +4,142 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pharmacy - Product Details</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Welcome to Tiryaq Health Pharmacy</h1>
-    
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="products.html">Products</a></li>
-  </ul>
+
+<header class="bg-info text-white text-center py-4">
+  <h1 class="fw-bold">Welcome to Tiryaq pharmacy</h1>
+  <p class="lead">Your Trusted Health & Pharmacy Companion!</p>
+</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-info" href="#">Tiryaq</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="questionnaire.html">Questionnaire</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="calculate.html">Calculator</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="funpage.html">Fun Page</a></li>
+      </ul>
+    </div>
+  </div>
 </nav>
-  </header>
 
-  <main>
-    <h2>Product Details</h2>
+  <!-- Navigation Bar -->
+  <!-- removed-navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Pharmacy</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="calculate.html">Cart & Bill Calculator</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  <!-- end-navbar -->
 
-    <section id="paracetamol">
-      <h3>Paracetamol</h3>
-      <img src="Paracetamol.webp" alt="Paracetamol">
-      <p><strong>Description:</strong> Paracetamol is used to relieve pain and reduce fever.</p>
-      <p><strong>Side Effects:</strong> May include nausea, headache, or dizziness in rare cases.</p>
-      <p><strong>Price</strong></p>
-      <a href="#top">Back to Top</a>
-    </section>
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">Product Details</h2>
+    <div id="product-details-container">
+      <!-- Product sections will be dynamically added here -->
+    </div>
+  </div>
 
-
-    <section id="Metformin">
-      <h3>Metformin</h3>
-      <img src="Metformin.webp" alt="Metformin">
-      <p><strong>Description:</strong> treat high blood sugar levels that are caused by a type of diabetes mellitus or sugar diabetes called type 2 diabetes.</p>
-      <p><strong>Side Effects:</strong> May include Abdominal or stomach discomfort.</p>
-      <p><strong>Price: 3.5 OMR</strong></p>
-      <a href="#top">Back to Top</a>
-    </section>
-
-    
-    <section id="Levothyroxine Sodium">
-      <h3>Levothyroxine Sodium</h3>
-      <img src="Levothyroxine Sodium.webp" alt="Levothyroxine Sodium">
-      <p><strong>Description:</strong> Vitamin C boosts your immune system and helps fight infections.
-        The thyroid gland makes thyroid hormones which help to control energy levels and growth. 
-        Levothyroxine is taken to replace the missing thyroid hormone thyroxine.</p>
-      <p><strong>Side Effects:</strong> Feeling sick (nausea) Stick to simple meals and do not eat rich or spicy food.</p>
-      <p><strong>Price: 1.6</strong></p>
-      <a href="#top">Back to Top</a>
-    </section>
-
-    <section id="Lisinopril">
-      <h3>Lisinopril</h3>
-      <img src="Lisinopril.png" alt="Lisinopril">
-      <p><strong>Description:</strong>Lisinopril works by blocking a substance in the body that causes the blood vessels to tighten. 
-        As a result, lisinopril relaxes the blood vessels.</p>
-      <p><strong>Side Effects:</strong> Feeling dizzy or lightheaded, especially when you stand up or sit up quickly.</p>
-      <p><strong>Price: 2.8</strong></p>
-      <a href="#top">Back to Top</a>
-    </section>
-   
-    <section id="Atorvastatin">
-      <h3>Atorvastatin</h3>
-      <img src="Atorvastatin.png" alt="Atorvastatin">
-      <p><strong>Description:</strong>Atorvastatin belongs to the group of medicines called HMG-CoA reductase inhibitors, or statins. 
-        It works by blocking an enzyme that is needed by the body to make cholesterol, 
-        and this reduces the amount of cholesterol in the blood.</p>
-      <p><strong>Side Effects:</strong> Headaches. Make sure you rest and drink plenty of fluids.</p>
-      <p><strong>Price: 4</strong></p>
-      <a href="#top">Back to Top</a>
-    </section>
-
-    <section id="esomeprazole">
-      <h3>esomeprazole</h3>
-      <img src="esomeprazole.jpg" alt="esomeprazole">
-      <p><strong>Description:</strong>Esomeprazole is a proton pump inhibitor (PPI). 
-        It works by decreasing the amount of acid that is produced by the stomach.</p>
-      <p><strong>Side Effects:</strong> headache, diarrhoea and stomach pain.</p>
-      <p><strong>Price: 3.1</strong></p>
-      <a href="#top">Back to Top</a>
-    </section>
-
-    <section id="Loratadine">
-      <h3>Loratadine</h3>
-      <img src="Loratadine.webp" alt="Loratadine">
-      <p><strong>Description:</strong>Loratadine is used to treat allergy symptoms, 
-        including runny or stuffy nose, sneezing, watery eyes, and itching of the eyes, nose or throat.</p>
-      <p><strong>Side Effects:</strong> dry mouth, nosebleed and sore throat.</p>
-      <p><strong>Price: 3.7</strong></p>
-      <a href="#top">Back to Top</a>
-    </section>
-
-    <section id="Salbutamol">
-      <h3>Salbutamol</h3>
-      <img src="Salbutamol.png" alt="Salbutamol">
-      <p><strong>Description:</strong>It's a type of medicine called a bronchodilator. 
-        It works by relaxing the muscles of the airways into the lungs, which makes it easier to breathe.</p>
-      <p><strong>Side Effects:</strong> suddenly noticeable heartbeats (palpitations).</p>
-      <p><strong>Price: 1.9</strong></p>
-      <a href="#top">Back to Top</a>
-    </section>
-
-    <section id="amoxicillin bp 500mg">
-      <h3>amoxicillin bp 500mg</h3>
-      <img src="Amoxicillin.png" alt="amoxicillin bp 500mg">
-      <p><strong>Description:</strong>Amoxicillin is only available on prescription. It comes as capsules or as a liquid that you swallow. 
-        It's also given by injection, but this is usually only done in hospital.</p>
-      <p><strong>Side Effects:</strong> rash · skin blisters or peeling · itching · hives · wheezing</p>
-      <p><strong>Price: 4.2</strong></p>
-      <a href="#top">Back to Top</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Your Pharmacy. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    &copy; 2023 Your Pharmacy. All rights reserved.
   </footer>
+
+  <!-- Embedded JavaScript -->
+  <script>
+    // Define Product Constructor
+    function Product(name, description, price, moreDetails) {
+      this.name = name;
+      this.description = description;
+      this.price = price;
+      this.moreDetails = moreDetails || "No additional details available.";
+    }
+
+    // Load productsArray from localStorage or initialize as empty array
+    const productsArray = JSON.parse(localStorage.getItem("productsArray")) || [
+      new Product("Paracetamol", "Pain reliever and fever reducer.", 2.7, "Safe for most adults and children."),
+      new Product("Metformin", "Treat high blood sugar levels.", 3.5, "Commonly prescribed for type 2 diabetes."),
+      new Product("Levothyroxine Sodium", "For underactive thyroid gland problem.", 1.6, "Take on an empty stomach."),
+      new Product("Lisinopril", "High blood pressure (hypertension).", 2.85, "May cause dizziness."),
+      new Product("Atorvastatin", "Lower cholesterol and triglyceride (fats) levels in the blood.", 4, "Avoid grapefruit juice."),
+      new Product("Esomeprazole", "For too much acid in the stomach.", 3.1, "Relieves heartburn."),
+      new Product("Loratadine", "Treat allergy symptoms.", 3.7, "Non-drowsy antihistamine."),
+      new Product("Salbutamol", "Relieve symptoms of asthma and chronic obstructive pulmonary disease.", 1.9, "Use as an inhaler."),
+      new Product("Amoxicillin BP 500mg", "Treat bacterial infections.", 4.2, "Take with food.")
+    ];
+
+    // Function to Dynamically Display Product Details Sections
+    function displayProductDetails() {
+      const container = document.getElementById("product-details-container");
+      container.innerHTML = ""; // Clear existing content
+
+      productsArray.forEach(product => {
+        const sectionId = product.name.toLowerCase().replace(/\s+/g, "-");
+        const section = `
+          <section id="${sectionId}" class="mb-5">
+            <h3>${product.name}</h3>
+            <img src="${product.name.replace(/\s+/g, "")}.PNG" alt="${product.name}" class="img-fluid rounded mb-3" width="200">
+            <p><strong>Description:</strong> ${product.description}</p>
+            <p><strong>Price:</strong> ${product.price.toFixed(2)} OMR</p>
+            <p><strong>More Details:</strong> ${product.moreDetails}</p>
+            <button class="btn btn-success" onclick="addToCart('${product.name}', ${product.price})">Add to Cart</button>
+            <a href="#top" class="btn btn-secondary ms-2">Back to Top</a>
+          </section>
+        `;
+        container.insertAdjacentHTML("beforeend", section);
+      });
+    }
+
+    // Function to Add Product to Cart
+    function addToCart(name, price) {
+      // Load cart from localStorage or initialize as empty array
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // Check if the product is already in the cart
+      const existingProduct = cart.find(item => item.name === name);
+      if (existingProduct) {
+        existingProduct.quantity += 1; // Increase quantity if already in cart
+      } else {
+        cart.push({ name, price, quantity: 1 }); // Add new product to cart
+      }
+
+      // Save updated cart to localStorage
+      localStorage.setItem("cart", JSON.stringify(cart));
+      alert(`${name} has been added to your cart!`);
+    }
+
+    // Initialize Product Details on Page Load
+    window.onload = function () {
+      displayProductDetails();
+
+      // Scroll to the correct section based on the URL hash
+      const hash = window.location.hash;
+      if (hash) {
+        const element = document.querySelector(hash);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+  </script>
 </body>
 </html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pharmacy - Bill Calculator</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<header class="bg-info text-white text-center py-4">
+  <h1 class="fw-bold">Welcome to Tiryaq pharmacy</h1>
+  <p class="lead">Your Trusted Health & Pharmacy Companion!</p>
+</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-info" href="#">Tiryaq</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="questionnaire.html">Questionnaire</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="calculate.html">Calculator</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="funpage.html">Fun Page</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Navigation Bar -->
+  <!-- removed-navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Pharmacy</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link active" href="calculate.html">Cart & Bill Calculator</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  <!-- end-navbar -->
+
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">Your Cart</h2>
+    <p class="text-muted text-center">
+      Review your cart and calculate the total cost. Discounts may apply based on your age.
+    </p>
+
+    <!-- Cart Table -->
+    <table id="cart-table" class="table table-striped">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price (OMR)</th>
+          <th>Quantity</th>
+          <th>Total (OMR)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Cart items will be dynamically added here -->
+      </tbody>
+    </table>
+
+    <!-- Total Amount Section -->
+    <div id="total-section" class="mt-4 d-none">
+      <h4>Bill Summary</h4>
+      <p><strong>Subtotal:</strong> <span id="subtotal-amount"></span> OMR</p>
+      <p><strong>Discount Applied:</strong> <span id="discount-applied"></span> OMR</p>
+      <p><strong>Final Amount:</strong> <span id="final-amount"></span> OMR</p>
+    </div>
+
+    <!-- Customer Details Form -->
+    <form id="customer-form" class="mt-4">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="customerName" class="form-label">Customer Name</label>
+          <input type="text" id="customerName" class="form-control" placeholder="Enter your name" required>
+        </div>
+        <div class="col-md-6">
+          <label for="customerAge" class="form-label">Customer Age</label>
+          <input type="number" id="customerAge" class="form-control" placeholder="Enter your age" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3 w-100">Calculate Total</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    &copy; 2023 Your Pharmacy. All rights reserved.
+  </footer>
+
+  <!-- Embedded JavaScript -->
+  <script>
+    // Load cart from localStorage or initialize as empty array
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Function to Display Cart Items
+    function displayCart() {
+      const tableBody = document.querySelector("#cart-table tbody");
+      tableBody.innerHTML = ""; // Clear existing rows
+
+      let subtotal = 0;
+
+      cart.forEach(item => {
+        const row = `
+          <tr>
+            <td>${item.name}</td>
+            <td>${item.price.toFixed(2)}</td>
+            <td>${item.quantity}</td>
+            <td>${(item.price * item.quantity).toFixed(2)}</td>
+          </tr>
+        `;
+        tableBody.insertAdjacentHTML("beforeend", row);
+
+        subtotal += item.price * item.quantity; // Calculate subtotal
+      });
+
+      document.getElementById("subtotal-amount").textContent = subtotal.toFixed(2);
+    }
+
+    // Function to Handle Customer Form Submission
+    document.getElementById("customer-form").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent default form submission behavior
+
+      // Retrieve input values
+      const customerAge = parseInt(document.getElementById("customerAge").value.trim());
+      const subtotal = parseFloat(document.getElementById("subtotal-amount").textContent);
+
+      // Validate inputs
+      if (isNaN(customerAge)) {
+        alert("Please enter a valid age.");
+        return;
+      }
+
+      // Apply discount logic
+      let discountApplied = 0;
+
+      // Case 1: Senior citizen discount (10% if age > 60)
+      if (customerAge > 60) {
+        discountApplied += subtotal * 0.1; // 10% discount
+      }
+
+      // Calculate final amount
+      const finalAmount = subtotal - discountApplied;
+
+      // Display results
+      document.getElementById("discount-applied").textContent = discountApplied.toFixed(2);
+      document.getElementById("final-amount").textContent = finalAmount.toFixed(2);
+
+      // Show total section
+      document.getElementById("total-section").classList.remove("d-none");
+    });
+
+    // Initialize Cart Display on Page Load
+    window.onload = function () {
+      if (cart.length === 0) {
+        document.querySelector("#cart-table tbody").innerHTML = `
+          <tr>
+            <td colspan="4" class="text-center">Your cart is empty.</td>
+          </tr>
+        `;
+      } else {
+        displayCart();
+      }
+    };
+  </script>
+</body>
+</html>

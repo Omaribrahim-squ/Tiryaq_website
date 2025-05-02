@@ -4,105 +4,200 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pharmacy - Products</title>
-  <link rel="stylesheet" href="style.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Welcome to Tiryaq Health Pharmacy</h1>
-    
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="contact.html">Contact</a></li>
-    <li><a href="products.html">Products</a></li>
-  </ul>
-</nav>
-  </header>
 
-  <main>
-    <h2>Our Products</h2>
-    <table class="products-table">
+<header class="bg-info text-white text-center py-4">
+  <h1 class="fw-bold">Welcome to Tiryaq pharmacy</h1>
+  <p class="lead">Your Trusted Health & Pharmacy Companion!</p>
+</header>
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-info" href="#">Tiryaq</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="about.html">About Us</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="contact.html">Contact</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="products.html">Products</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="questionnaire.html">Questionnaire</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="calculate.html">Calculator</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="funpage.html">Fun Page</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <!-- Navigation Bar -->
+  <!-- removed-navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Pharmacy</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="products.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  <!-- end-navbar -->
+
+  <!-- Search Form (Moved to Top) -->
+  <div class="container mt-4">
+    <h3>Search for a Product</h3>
+    <form id="search-product-form" class="mb-4">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="searchName" class="form-label">Search by Name</label>
+          <input type="text" id="searchName" class="form-control" required>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-secondary mt-3">Search</button>
+    </form>
+    <p id="search-result" class="mt-3"></p>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">Our Products</h2>
+    <table id="products-table" class="table table-striped">
       <thead>
         <tr>
           <th>Image</th>
           <th>Name</th>
           <th>Description</th>
           <th>Price</th>
-          <th>More details</th>
+          <th>Action</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td><img src="Paracetamol.webp" alt="Paracetamol"></td>
-          <td>Paracetamol</td>
-          <td>Pain reliever and fever reducer.</td>
-          <td> 2.7 OMR</td>
-          <td><a href="details.html#paracetamol">View Details</a></td>
-        </tr>
-        <tr>
-          <td><img src="Metformin.webp" alt="Metformin"></td>
-          <td>Metformin</td>
-          <td>treat high blood sugar levels .</td>
-          <td> 3.5 OMR</td>
-          <td><a href="details.html#Metformin">View Details</a></td>
-        </tr>
-        <tr>
-          <td><img src="Levothyroxine Sodium.webp" alt="Levothyroxine Sodium"></td>
-          <td>Levothyroxine Sodium </td>
-          <td>For underactive thyroid gland problem</td>
-          <td> 1.6 OMR</td>
-          <td><a href="details.html#Levothyroxine Sodium">View Details</a></td>
-        </tr>
-        <tr>
-          <td><img src="Lisinopril.png" alt="Lisinopril"></td>
-          <td>Lisinopril</td>
-          <td>high blood pressure (hypertension)</td>
-          <td> 2.85 OMR</td>
-          <td><a href="details.html#Lisinopril">View Details</a></td>
-        </tr>
-        <tr>
-          <td><img src="Atorvastatin.png" alt="Atorvastatin"></td>
-          <td>Atorvastatin</td>
-          <td>lower cholesterol and triglyceride (fats) levels in the blood</td>
-          <td> 4 OMR</td>
-          <td><a href="details.html#Atorvastatin">View Details</a></td>
-        </tr>
-        <tr>
-          <td><img src="esomeprazole.jpg" alt="esomeprazole"></td>
-          <td>esomeprazole</td>
-          <td> For too much acid in the stomach</td>
-          <td> 3.1 OMR</td>
-          <td><a href="details.html#esomeprazole">View Details</a></td>
-        </tr>
-        <tr>
-          <td><img src="Loratadine.webp" alt="Loratadine"></td>
-          <td>Loratadine</td>
-          <td>treat allergy symptoms</td>
-          <td> 3.7 OMR</td>
-          <td><a href="details.html#Loratadine">View Details</a></td>
-        </tr>
-        <tr>
-          <td><img src="Salbutamol.png" alt="Salbutamol"></td>
-          <td>Salbutamol</td>
-          <td>relieve symptoms of asthma and chronic obstructive pulmonary disease</td>
-          <td> 1.9 OMR</td>
-          <td><a href="details.html#Salbutamol">View Details</a></td>
-        </tr>
-        <tr>
-          <td><img src="Amoxicillin.png" alt="amoxicillin bp 500mg"></td>
-          <td>amoxicillin bp 500mg</td>
-          <td>treat bacterial infections</td>
-          <td> 4.2 OMR</td>
-          <td><a href="details.html#amoxicillin bp 500mg">View Details</a></td>
-        </tr>
+        <!-- Rows will be dynamically added here -->
       </tbody>
     </table>
-  </main>
 
+    <!-- Add Product Form -->
+    <h3>Add a New Product</h3>
+    <form id="add-product-form" class="mb-4">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="productName" class="form-label">Product Name</label>
+          <input type="text" id="productName" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="productDescription" class="form-label">Description</label>
+          <input type="text" id="productDescription" class="form-control" required>
+        </div>
+      </div>
+      <div class="row mt-3">
+        <div class="col-md-6">
+          <label for="productPrice" class="form-label">Price (OMR)</label>
+          <input type="number" step="0.01" id="productPrice" class="form-control" required>
+        </div>
+        <div class="col-md-6">
+          <label for="productMoreDetails" class="form-label">More Details</label>
+          <textarea id="productMoreDetails" class="form-control" rows="3" placeholder="Enter more details about the product..."></textarea>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Add Product</button>
+    </form>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Your Pharmacy. All rights reserved.</p>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-3 mt-5">
+    &copy; 2023 Your Pharmacy. All rights reserved.
   </footer>
+
+  <!-- Embedded JavaScript -->
+  <script>
+    // Define Product Constructor
+    function Product(name, description, price, moreDetails) {
+      this.name = name;
+      this.description = description;
+      this.price = price;
+      this.moreDetails = moreDetails || "No additional details available.";
+    }
+
+    // Load productsArray from localStorage or initialize as empty array
+    let productsArray = JSON.parse(localStorage.getItem("productsArray")) || [
+      new Product("Paracetamol", "Pain reliever and fever reducer.", 2.7, "Safe for most adults and children."),
+      new Product("Metformin", "Treat high blood sugar levels.", 3.5, "Commonly prescribed for type 2 diabetes."),
+      new Product("Levothyroxine Sodium", "For underactive thyroid gland problem.", 1.6, "Take on an empty stomach."),
+      new Product("Lisinopril", "High blood pressure (hypertension).", 2.85, "May cause dizziness."),
+      new Product("Atorvastatin", "Lower cholesterol and triglyceride (fats) levels in the blood.", 4, "Avoid grapefruit juice."),
+      new Product("Esomeprazole", "For too much acid in the stomach.", 3.1, "Relieves heartburn."),
+      new Product("Loratadine", "Treat allergy symptoms.", 3.7, "Non-drowsy antihistamine."),
+      new Product("Salbutamol", "Relieve symptoms of asthma and chronic obstructive pulmonary disease.", 1.9, "Use as an inhaler."),
+      new Product("Amoxicillin BP 500mg", "Treat bacterial infections.", 4.2, "Take with food.")
+    ];
+
+    // Save productsArray to localStorage whenever updated
+    function saveProductsToLocalStorage() {
+      localStorage.setItem("productsArray", JSON.stringify(productsArray));
+    }
+
+    // Function to Dynamically Display Products Table
+    function displayProductsTable() {
+      const tableBody = document.querySelector("#products-table tbody");
+      tableBody.innerHTML = ""; // Clear existing rows
+      productsArray.forEach(product => {
+        const row = `
+          <tr>
+            <td><img src="${product.name.replace(/\s+/g, '')}.png" alt="${product.name}" width="50"></td>
+            <td>${product.name}</td>
+            <td>${product.description}</td>
+            <td>${product.price.toFixed(2)} OMR</td>
+            <td><a href="details.html#${product.name.toLowerCase().replace(/\s+/g, '-')}" class="btn btn-sm btn-primary">View Details</a></td>
+          </tr>
+        `;
+        tableBody.insertAdjacentHTML("beforeend", row);
+      });
+    }
+
+    // Add Product Form Submission Handler
+    document.getElementById("add-product-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("productName").value.trim();
+      const description = document.getElementById("productDescription").value.trim();
+      const price = parseFloat(document.getElementById("productPrice").value.trim());
+      const moreDetails = document.getElementById("productMoreDetails").value.trim();
+
+      if (name && description && !isNaN(price)) {
+        productsArray.push(new Product(name, description, price, moreDetails));
+        saveProductsToLocalStorage(); // Save updated array to localStorage
+        displayProductsTable(); // Update the products table
+        alert("Product added successfully!");
+        document.getElementById("add-product-form").reset(); // Reset form
+      } else {
+        alert("Please fill in all fields correctly.");
+      }
+    });
+
+    // Search Product Form Submission Handler
+    document.getElementById("search-product-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const searchName = document.getElementById("searchName").value.trim().toLowerCase();
+      const result = productsArray.find(product => product.name.toLowerCase() === searchName);
+
+      const searchResultElement = document.getElementById("search-result");
+      if (result) {
+        searchResultElement.textContent = `Found: ${result.name} - ${result.description} (${result.price.toFixed(2)} OMR)`;
+      } else {
+        searchResultElement.textContent = "Product not found.";
+      }
+    });
+
+    // Initialize Table on Page Load
+    window.onload = function () {
+      displayProductsTable();
+    };
+  </script>
 </body>
 </html>
